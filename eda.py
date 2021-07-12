@@ -297,12 +297,12 @@ def write(state):
     df_data_clean['education'].unique()
     df_data_clean['education'].value_counts()
     st.dataframe(df_data_clean['education'].groupby(df_data_clean['subscribed']).value_counts().reset_index(name='count'))
-    df_data_clean.to_csv('/Users/akshayshembekar/Documents/Projects/JupyterLabInstall/UDCDSA/BUAD625/EDA/AS/df_data_clean.csv', index=False)
+    df_data_clean.to_csv('df_data_clean.csv', index=False)
 
 
 # @st.cache
 def load_data():
-    df_data = pd.read_csv('/Users/akshayshembekar/Documents/Projects/JupyterLabInstall/UDCDSA/BUAD625/EDA/AS/bank-additional-full.csv', sep=';')
+    df_data = pd.read_csv('bank-additional-full.csv', sep=';')
     return df_data
 
 
