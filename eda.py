@@ -139,7 +139,7 @@ def write(state):
 
     st.subheader('Understanding Correlation')
     corrMatrix = df_data_clean.corr()
-    corrFig = corrMatrix.style.background_gradient(cmap='coolwarm')
+    corrFig = corrMatrix.style.background_gradient(cmap='coolwarm', axis=None).set_precision(2)
     st.markdown(corrFig)
     st.markdown('''
     * **Observations**
