@@ -1,5 +1,4 @@
-import numpy as np
-import pandas as pd
+
 import io
 # from PIL import Image
 # image1 = Image.open('images/IHM Pandora.jpeg')
