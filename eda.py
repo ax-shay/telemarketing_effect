@@ -140,7 +140,7 @@ def write(state):
     st.subheader('Understanding Correlation')
     corrMatrix = df_data_clean.corr()
     corrFig = corrMatrix.style.background_gradient(cmap='coolwarm', axis=None).set_precision(2)
-    st.write(corrFig)
+    st.pyplot(corrFig)
     st.markdown('''
     * **Observations**
     1. None of the features have a very high correlation with whether a consumer opened a deposit account or not  
