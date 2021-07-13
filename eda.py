@@ -124,10 +124,12 @@ def write(state):
 
     st.subheader('Understanding Correlation')
     corrMatrix = df_data_clean.corr()
-    corrFig = corrMatrix.style.background_gradient(cmap='coolwarm', axis=None).set_precision(2)
+    # corrFig = corrMatrix.style.background_gradient(cmap='coolwarm', axis=None).set_precision(2)
 
-    #Todo: Unable to displau correlation matrix
-    st.markdown(corrFig)
+    fig, ax = plt.subplots()
+    sns.heatmap(corrMatrix, ax=ax)
+    st.write(fig)
+
     st.markdown('''
     * **Observations**
     1. None of the features have a very high correlation with whether a consumer opened a deposit account or not  
@@ -286,7 +288,7 @@ def write(state):
     # plot the count after under-sampeling
     test_under['subscribed'].value_counts().plot(kind='bar', title='count (target)')
     st.pyplot()
-    st.markdown('''Disadvantage of undersampling:Since we don't use the significant number of data points,we are losing information, and as a result, we will not get significant results.''')
+    st.markdown('''Disadvantage of undersampling: Since we don't use the significant number of data points,we are losing information, and as a result, we will not get significant results.''')
 
     st.subheader('Random Over-Sampling')
     class_1_over = class_1.sample(class_count_0, replace=True)
