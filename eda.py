@@ -243,7 +243,7 @@ def write(state):
             x = p.get_x() + p.get_width() / 2 - 0.05
             y = p.get_y() + p.get_height()
             ax.annotate(percentage, (x, y), size = 12)
-        st.pyplot(plt)
+        st.pyplot()
 
     plt.figure(figsize=(7, 5))
     plt.title("Fig:1 - % Subscribership")
@@ -278,15 +278,15 @@ def write(state):
     st.write('class 0:', class_0.shape)
     st.write('class 1:', class_1.shape)
 
-    st.subheader('Random Uner-Sampling')
-    class_0_under = class_0.sample(class_count_1)
+    st.subheader('Random Under-Sampling')
+    class_0_under = class_0.sample(class_count_1, replace=True)
 
     test_under = pd.concat([class_0_under, class_1], axis=0)
 
-    st.write("total class of 1 and0:", test_under['subscribed'].value_counts())
+    st.write("total class of 1 and 0:", test_under['subscribed'].value_counts())
 
     # plot the count after under-sampeling
-    test_under['subscribed'].value_counts().plot(kind='bar', title='count (target)')
+    test_under['subscribed'].value_counts().plot(kind='bar', title='count (target)', color='red')
     st.pyplot()
     st.markdown('''Disadvantage of undersampling: Since we don't use the significant number of data points,we are losing information, and as a result, we will not get significant results.''')
 
@@ -298,7 +298,7 @@ def write(state):
     st.write("total class of 1 and 0:", test_over['subscribed'].value_counts())
 
     # plot the count after under-sampeling
-    test_over['subscribed'].value_counts().plot(kind='bar', title='count (target)')
+    test_over['subscribed'].value_counts().plot(kind='bar', title='count (target)', color='green')
     st.pyplot()
 
     st.markdown('''
