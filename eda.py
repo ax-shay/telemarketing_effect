@@ -108,33 +108,18 @@ def write(state):
     st.write(shape)
 
     st.markdown(' ')
-    st.subheader('Better understanding the outcome variable')
-    st.markdown('Checking distribution of class variable to see if it is a balanced data set or not')
-
-    def without_hue(plot, feature):
-        total = len(feature)
-        for p in ax.patches:
-            percentage = '{:.2f}%'.format(100 * p.get_height()/total)
-            x = p.get_x() + p.get_width() / 2 - 0.05
-            y = p.get_y() + p.get_height()
-            ax.annotate(percentage, (x, y), size = 12)
-        st.pyplot(plt)
-
-    plt.figure(figsize=(7, 5))
-    plt.title("Fig:1 - % Subscribership")
-    ax = sns.countplot(x='subscribed', data=df_data_clean)
-    plt.xticks(size=12)
-    plt.xlabel('subscribed', size=12)
-    plt.yticks(size=12)
-    plt.ylabel('count', size=12)
-    without_hue(ax, df_data_clean.subscribed)
-
-    st.markdown(' ')
+    st.subheader('Chi-Square Test')
     st.markdown('''
-    This data set is an imbalanced data set which has 88.73% of class variable 0 and 11.27% of 1.  
-    * Please note:   
-        - 0 indicates the term deposit is not subscribed  
-        - 1 means the term deposit is subscribed. 
+    * A Chi-Square test is a test of statistical significance for categorical variables. It helps to understand the relationship between the categorial variables of the dataset. This helps us analyze the dependence of one category of the variable on the other independent category of the variable. Chi-squared test is performed between categorical variable and class variable. <br>
+
+        * The null hypothesis -The grouping variables have no association or correlation amongst them.
+        * The alternate Hypothesis-The variables are associated with each other and happen to have a correlation between the variables.
+
+
+    * Chi-Square can help us understand if there's a relationship between the proportion of subscribed and not subsribed for the unknown vs. known values of each feature. 
+        * If the unknown status and subscribed value are dependent, then they are releated and simply deleting the rows with null values may have an impact on the model
+        * The results of the chi-square test for "Default" and "Education" are dependent. Since "Default" has the largest amount of missing values, we will train a model to impute them. For "Education", the missing values will be imputed by using the most common value.
+
     ''')
 
     st.subheader('Understanding Correlation')
@@ -245,6 +230,41 @@ def write(state):
     * **Observation**
     The months of May-Jun-Aug have more clients subscribing compared to other months''')
 
+    st.markdown(' ')
+    st.subheader('Better understanding the outcome variable')
+    st.markdown('Checking distribution of class variable to see if it is a balanced data set or not')
+
+    def without_hue(plot, feature):
+        total = len(feature)
+        for p in ax.patches:
+            percentage = '{:.2f}%'.format(100 * p.get_height()/total)
+            x = p.get_x() + p.get_width() / 2 - 0.05
+            y = p.get_y() + p.get_height()
+            ax.annotate(percentage, (x, y), size = 12)
+        st.pyplot(plt)
+
+    plt.figure(figsize=(7, 5))
+    plt.title("Fig:1 - % Subscribership")
+    ax = sns.countplot(x='subscribed', data=df_data_clean)
+    plt.xticks(size=12)
+    plt.xlabel('subscribed', size=12)
+    plt.yticks(size=12)
+    plt.ylabel('count', size=12)
+    without_hue(ax, df_data_clean.subscribed)
+
+    st.markdown(' ')
+    st.markdown('''
+        This data set is an imbalanced data set which has 88.73% of class variable 0 and 11.27% of 1.  
+        * Please note:   
+            - 0 indicates the term deposit is not subscribed  
+            - 1 means the term deposit is subscribed. 
+            
+        Since the class distribution is not uniform among the classes in the imbalanced dataset, the model will be biased towards the majority class. There is a way to solve the class imbalanced problem.
+        - Resampling - is used to adjust the class distribution of a data set 
+            * Undersampling - Undersampling resamples the majority class points in the data to make them equal to the minority class points.
+            * Oversampling - Oversampling refers to the resampling of the minority class points to equal the total number of majority points. 
+        ''')
+
     st.subheader('Resampling')
     # class count
     class_count_0, class_count_1 = df_data_clean['subscribed'].value_counts()
@@ -255,6 +275,18 @@ def write(state):
 
     st.write('class 0:', class_0.shape)
     st.write('class 1:', class_1.shape)
+
+    st.subheader('Random Uner-Sampling')
+    class_0_under = class_0.sample(class_count_1)
+
+    test_under = pd.concat([class_0_under, class_1], axis=0)
+
+    st.write("total class of 1 and0:", test_under['subscribed'].value_counts())
+
+    # plot the count after under-sampeling
+    test_under['subscribed'].value_counts().plot(kind='bar', title='count (target)')
+    st.pyplot()
+    st.markdown('''Disadvantage of undersampling:Since we don't use the significant number of data points,we are losing information, and as a result, we will not get significant results.''')
 
     st.subheader('Random Over-Sampling')
     class_1_over = class_1.sample(class_count_0, replace=True)
