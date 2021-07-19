@@ -1,5 +1,5 @@
-# UDCDSA Captsone Project
-## Predicting Effect of Bank Telemarketing (Term Deposit Sale)
+# UDCDSA Captsone Project: Predicting Effect of Bank Telemarketing (Term Deposit Sale)
+## Executive Summary
 ### Goal: 
 To predict if the banking clients will subscribe to a term deposit
 ### Overview:
