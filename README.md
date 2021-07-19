@@ -1,4 +1,4 @@
-# JPMC UD Captsone Project
+# UDCDSA Captsone Project
 ## Predicting Effect of Bank Telemarketing (Term Deposit Sale)
 ### Goal: 
 To predict if the banking clients will subscribe to a term deposit
