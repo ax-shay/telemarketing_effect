@@ -39,7 +39,7 @@ BitBucket Repo: https://github.com/ax-shay/telemarketing_effect
     - setup.sh: For running app on Heroku server
     - defSessionState.py: Manage paging within the app
 
-### Application:
+## Application:
 Link: https://telemarketing-effect.herokuapp.com
 
 -- END
