@@ -2,6 +2,7 @@ import streamlit as st
 import home
 import eda
 import model
+import prediction
 import defSessionState as ss
 
 st.set_page_config(
@@ -15,7 +16,7 @@ PAGES = {
     "Home": home,
     "EDA": eda,
     "Model": model,
-    "Prediction": None,
+    "Prediction": prediction,
 }
 
 
