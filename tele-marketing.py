@@ -27,7 +27,7 @@ def main():
 
     page = PAGES[selection].write(state)
 
-    st.sidebar.title("Team-2")
+    st.sidebar.title("Team-JACKS")
     st.sidebar.info(
         """
         Akshay Shembekar, Courtney Golding, Jonathan Littleton, Komal Handa, Sambhavi Parajuli 
