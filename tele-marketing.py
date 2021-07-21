@@ -8,7 +8,7 @@ import defSessionState as ss
 st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded",
-    page_title="UDCDSA Captsone Project: Predicting Effect of Bank Telemarketing (Term Deposit Sale)",
+    page_title="Team Jacks",
     page_icon=None,  # String, anything supported by st.image, or None.
 )
 
@@ -31,7 +31,7 @@ def main():
     st.sidebar.title("Team-JACKS")
     st.sidebar.info(
         """
-        Akshay Shembekar, Courtney Golding, Jonathan Littleton, Komal Handa, Sambhavi Parajuli 
+        **J**onathan Littleton, **A**kshay Shembekar, **C**ourtney Golding, **K**omal Handa, **S**ambhavi Parajuli 
         """
     )
 
