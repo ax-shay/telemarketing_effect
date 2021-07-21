@@ -1,7 +1,11 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+from PIL import Image
 
 # Data Processing
 import pandas as pd
+
+image1 = Image.open('images/Feature_Imp.JPG')
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 template_dict = {'Decision Tree': 0, 'Logistic Regression': 1, 'Random Forest': 2, 'XGBoost': 3}
@@ -36,6 +40,8 @@ def write(state):
         df1 = df.loc[df['Model'] == inputs["model1"]]
         df1.plot.barh(x='Metric', y='Score', title=inputs["model1"], color='green')
         st.pyplot()
+        if inputs["model1"] == 'Random Forest':
+            st.image(image1)
 
     with col2:
         inputs["model2"] = st.selectbox(
@@ -44,6 +50,8 @@ def write(state):
         df2 = df.loc[df['Model'] == inputs["model2"]]
         df2.plot.barh(x='Metric', y='Score', title=inputs["model2"], color='blue')
         st.pyplot()
+        if inputs["model2"] == 'Random Forest':
+            st.image(image1)
 
     st.write('')
     sp1, new_row, sp2 = st.beta_columns((0.1, 1, 0.1))
