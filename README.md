@@ -54,6 +54,6 @@ Check-out the "TPOT" folder which contains code used to run AutoML using TPOT cl
 This also contains profiling of data done using pandas_profile before clean-up and after clean-up of data.
 
 ## Application:
-Link: https://telemarketing-effect.herokuapp.com
+Link: <https://telemarketing-effect.herokuapp.com>
 
 -- END
