@@ -23,21 +23,21 @@ The data is related with direct marketing campaigns of a Portuguese banking inst
 BitBucket Repo: https://github.com/ax-shay/telemarketing_effect
 
 1) **requirements.txt**:
-    - All python import dependencies
+    - All python import dependencies. 
 2) **tele-marketing.py**:
-    - Main application file which houses the Streamlit application code
+    - Main application file which houses the Streamlit application code. 
 3) **home.py**:
-    - Executive Summary of Project
+    - Executive Summary of Project. 
 4) **eda.py**:
-    - Findings for Exploratory Data Analysis (EDA)
+    - Findings for Exploratory Data Analysis (EDA). 
 5) **model.py**:
-    - A head-to-head model comparison for 3 distinct models
+    - A head-to-head model comparison for 3 distinct models. 
 6) **predictions.py**:
-    - The best model amongst the 3 used for predicting the subscriber-ship of a client
+    - The best model amongst the 3 used for predicting the subscriber-ship of a client. 
 7) **Misc**:
     - Procfile: For running app on Heroku server
     - setup.sh: For running app on Heroku server
-    - defSessionState.py: Manage paging within the app
+    - defSessionState.py: Manage paging within the app. 
 
 ### Presentation:
 The "Presentation" folder contains .pptx & .pdf version of the final presentation for this project.
