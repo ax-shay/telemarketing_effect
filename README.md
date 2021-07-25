@@ -11,7 +11,7 @@ Akshay P. Shembekar; Courtney Golding; Jonathan Littleton; Komal Handa; Sambhavi
 ## Files
 
 ### Input:
-Dataset Link: https://archive.ics.uci.edu/ml/datasets/bank+marketing
+[Dataset Source] (https://archive.ics.uci.edu/ml/datasets/bank+marketing)
 
 There is one input dataset:  
 
@@ -21,7 +21,7 @@ There is one input dataset:
 The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.
 
 ### Code:
-BitBucket Repo: https://github.com/ax-shay/telemarketing_effect
+[BitBucket Repo] (https://github.com/ax-shay/telemarketing_effect)
 
 1) **requirements.txt**:
     - All python import dependencies. 
