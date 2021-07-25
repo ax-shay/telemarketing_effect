@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+# UDCDSA Captsone Project: Predicting Effect of Bank Telemarketing (Term Deposit Sale)
+## Executive Summary
+### Goal: 
+To predict if the banking clients will subscribe to a term deposit
+### Overview:
+This research project focuses on targeting through telemarketing phone calls to sell long-term deposits. Within a campaign, the human agents execute phone calls to a list of clients to sell the deposit (outbound) or, if meanwhile the client calls the contact-center for any other reason, he is asked to subscribe the deposit (inbound). Thus, the result is a binary unsuccessful or successful contact.<br>
+### Team Members:
+Akshay P. Shembekar; Courtney Golding; Jonathan Littleton; Komal Handa; Sambhavi Parajuli
 
-You can use the [editor on GitHub](https://github.com/ax-shay/telemarketing_effect/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Files
 
-### Markdown
+### Input:
+Dataset Link: https://archive.ics.uci.edu/ml/datasets/bank+marketing
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+There is one input dataset:
+1) **bank-additional-full.csv**:  
+   - It has 41188 x 20 inputs, ordered by date (from May 2008 to November 2010)
 
-```markdown
-Syntax highlighted code block
+The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.
 
-# Header 1
-## Header 2
-### Header 3
+### Code:
+BitBucket Repo: https://github.com/ax-shay/telemarketing_effect
 
-- Bulleted
-- List
+1) **requirements.txt**:
+    - All python import dependencies
+2) **tele-marketing.py**:
+    - Main application file which houses the Streamlit application code
+3) **home.py**:
+    - Executive Summary of Project
+4) **eda.py**:
+    - Findings for Exploratory Data Analysis (EDA)
+5) **model.py**:
+    - A head-to-head model comparison for 3 distinct models
+6) **predictions.py**:
+    - The best model amongst the 3 used for predicting the subscriber-ship of a client
+7) **Misc**:
+    - Procfile: For running app on Heroku server
+    - setup.sh: For running app on Heroku server
+    - defSessionState.py: Manage paging within the app
 
-1. Numbered
-2. List
+### Presentation:
+The "Presentation" folder contains .pptx & .pdf version of the final presentation for this project.
 
-**Bold** and _Italic_ and `Code` text
+### AutoML:
+Check-out the "TPOT" folder which contains code used to run AutoML using TPOT classifier.
+This also contains profiling of data done using pandas_profile before clean-up and after clean-up of data.
 
-[Link](url) and ![Image](src)
-```
+## Application:
+Link: https://telemarketing-effect.herokuapp.com
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ax-shay/telemarketing_effect/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+-- END
